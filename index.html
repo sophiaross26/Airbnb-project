@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau Visualization</title>
+    <link href="./style.css" rel="stylesheet">
+    <style>
+        #vizContainer {
+            width: 100%;
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="./summary.html">Overview and Demo</a>
+        <a href="./index.html">Dashboard</a>
+        <a href="./credits.html">Credits</a>
+    </nav>
+    <div class="container">
+        <h1>Airbnb Tableau Dashboard</h1>
+        <div id="vizContainer"></div>
+    </div>
+    <script type="text/javascript">
+        function initViz() {
+            var containerDiv = document.getElementById("vizContainer"),
+                url = "https://public.tableau.com/views/Project_17200234967160/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link";
+
+            var options = {
+                width: containerDiv.offsetWidth,
+                height: containerDiv.offsetHeight,
+                hideTabs: true,
+                hideToolbar: true,
+            };
+
+            var viz = new tableau.Viz(containerDiv, url, options);
+        }
+
+        window.onload = initViz;
+    </script>
+</body>
+</html>
